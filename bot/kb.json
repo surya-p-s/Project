@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "question": "what is your name",
+      "answer": "My Name is IBot"
+    },
+    {
+      "question": "ESP32",
+      "answer": "no"
+    },
+    {
+      "question": "hi",
+      "answer": "hi"
+    }
+  ]
+  
+}
