@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataActivity"
+    android:id="@+id/drawablelayout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/ocean_blue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/marinesoft"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:paddingTop="10dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/aladin"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp">
+
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logOut">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="769dp"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/logOut">
+
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/speciesText"
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:paddingTop="10dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:text="@string/species"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText"
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText" />
+
+                            <TextView
+                                android:id="@+id/timeText"
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText" />
+
+                            <TextView
+                                android:id="@+id/imageText"
+                                android:layout_width="300dp"
+                                android:layout_height="50dp"
+                                android:text="@string/image_of_fishes"
+                                android:textColor="@color/black"
+
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/addedRow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border"
+                            android:visibility="gone"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/speciesTextadd"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityTextadd"
+                                android:layout_width="110dp"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText" />
+
+                            <TextView
+                                android:id="@+id/timeTextadd"
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText" />
+
+                            <ImageView
+                                android:id="@+id/imageadd"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:textSize="20sp"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/speciesText1"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/trevally_fish"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText1"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText1" />
+
+                            <TextView
+                                android:id="@+id/timeText1"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText2" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage1"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/trevally_fish" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText2"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/tuna_fish"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText2"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText2" />
+
+                            <TextView
+                                android:id="@+id/timeText2"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText2" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage2"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/tuna_fish" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText3"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/rainbow_trout"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText3"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText3" />
+
+                            <TextView
+                                android:id="@+id/timeText3"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText3" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage3"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/rainbow_trout" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText4"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/monk_fish"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText4"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText4" />
+
+                            <TextView
+                                android:id="@+id/timeText4"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText4" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage4"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/monk_fish" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText5"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/saradine_fishes"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText5"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText4" />
+
+                            <TextView
+                                android:id="@+id/timeText5"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText4" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage5"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/saradine_fish" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText6"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/gar_fish"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText6"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText4" />
+
+                            <TextView
+                                android:id="@+id/timeText6"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText4" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage6"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/gar_fish" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText7"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/atlantic_bluefin_tuna"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText7"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText4" />
+
+                            <TextView
+                                android:id="@+id/timeText7"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText4" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage7"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/atlantic_bluefin_tuna" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText8"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/chinese_sturgeon"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText8"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText4" />
+
+                            <TextView
+                                android:id="@+id/timeText8"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText4" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage8"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/chinese_sturgeon" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText9"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/beluga_sturgeon"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText9"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText4" />
+
+                            <TextView
+                                android:id="@+id/timeText9"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText4" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage9"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/beluga_sturgeon" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/blue_border">
+
+                            <TextView
+                                android:id="@+id/speciesText10"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/european_eel"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/quantityText10"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/quantity"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/speciesText4" />
+
+                            <TextView
+                                android:id="@+id/timeText10"
+                                android:layout_width="110dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toEndOf="@+id/quantityText4" />
+
+                            <ImageView
+                                android:id="@+id/speciesImage10"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:gravity="center"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                app:srcCompat="@drawable/euproen_eel" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                            <TextView
+                                android:layout_width="110dp"
+                                android:layout_height="50dp"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold|italic" />
+
+                        </TableRow>
+
+
+                    </TableLayout>
+
+                </ScrollView>
+
+            </HorizontalScrollView>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:menu="@menu/menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

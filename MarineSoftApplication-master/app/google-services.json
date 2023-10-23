@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893454465972",
+    "project_id": "marinesoft-a3c28",
+    "storage_bucket": "marinesoft-a3c28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893454465972:android:628f7677885f68543f10e1",
+        "android_client_info": {
+          "package_name": "com.example.marinesoftapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893454465972-ftiohuo55v4bpg188q16470mmnkcitop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCaVwK4XAsGuTDiy229mFFd71snmhOuhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893454465972-ftiohuo55v4bpg188q16470mmnkcitop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

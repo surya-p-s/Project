@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UploadActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/ocean_blue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/marinesoft"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:paddingTop="10dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/aladin"/>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ImageView
+            android:id="@+id/imageUploadView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/square_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+        <EditText
+            android:id="@+id/upSpeciesName"
+            android:layout_width="220dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/text_background"
+            android:hint="@string/enter_name_if_you_know"
+            android:textColorHint="#66424040"
+            android:textColor="@color/black"
+            android:fontFamily="@font/aclonica"
+            app:layout_constraintTop_toBottomOf="@+id/imageUploadView"/>
+
+        <Button
+            android:id="@+id/selectImgButton"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ocean_button"
+            android:text="@string/select_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upSpeciesName"/>
+
+        <Button
+            android:id="@+id/uplodImgButton"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/blue_border"
+            android:text="@string/upload_image"
+            android:textColor="@color/ocean_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectImgButton"/>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:menu="@menu/menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

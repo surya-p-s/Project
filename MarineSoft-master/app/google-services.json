@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1012620888606",
+    "project_id": "marinesoft-6bb01",
+    "storage_bucket": "marinesoft-6bb01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012620888606:android:a0d795b572c136cb8b7c0f",
+        "android_client_info": {
+          "package_name": "com.example.marinesoft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012620888606-8k9pvt5s0jo7gidm4nauubn80cvbld75.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.marinesoft",
+            "certificate_hash": "01a12af80f00b75cf3c9a2dcf7a74929adbbc5d7"
+          }
+        },
+        {
+          "client_id": "1012620888606-9498gfs224ovakmn58vvtaq1e5cdm0vs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9B9JOsNEOqoqg4FX2g43sWKmJ4XO68XY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012620888606-9498gfs224ovakmn58vvtaq1e5cdm0vs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DataPage">
+
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="192dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/edit_my_entry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logOut">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/orgnameText1"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/organisation_name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/apgroupText"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/a"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/anegativeText"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/an"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/bpositiveText"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/b"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/bnegativeText"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/bn"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/abpositiveText"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/ab"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/abnegativeText"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/abn"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/opositiveText"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/o"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/onegativeText"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/on"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/hospText1"
+                    android:layout_width="20dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/hospital1"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/apText1"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_50"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/anText1"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_30"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/bpText1"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    
+                    android:text="@string/_20"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/bnText1"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    
+                    android:text="@string/_30"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/abpText1"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    
+                    android:text="@string/_50"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/abnText1"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_20"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/opText1"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_0"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/onText1"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_1"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/hospText2"
+                    android:layout_width="20dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/hospital2"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/apText2"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_30"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/anText2"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_20"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/bpText2"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_30"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/bnText2"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_50"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/abpText2"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_20"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/abnText2"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:text="@string/_50"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/opText2"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_2"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/onText2"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    
+                    android:text="@string/_0"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/hospText3"
+                    android:layout_width="20dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/bloodbank1"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/apText3"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_100"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/anText3"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_150"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/bpText3"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_120"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/bnText3"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_150"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/abpText3"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_100"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/abnText3"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_100"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/opText3"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_5"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/onText3"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_2"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/hospText4"
+                    android:layout_width="20dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/bloodbank2"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/apText4"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:text="@string/_120"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/anText4"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_100"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/bpText4"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_150"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/bnText4"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    
+                    android:text="@string/_150"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/abpText4"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_120"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/abnText4"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    
+                    android:text="@string/_100"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/opText4"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:text="@string/_3"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/onText4"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    
+                    android:textAlignment="center"
+                    android:text="@string/_3"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </TableRow>
+            
+        </TableLayout>
+    </HorizontalScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
