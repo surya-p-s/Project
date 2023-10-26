@@ -1,42 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meat name="viewpoint" content="width=device-width, intial-scale=1.0">
-    <title>Netflix Website Clone </title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<html lang="en" style="
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewpoint" content="width=device-width, intial-scale=1">
+        <title>Netflix Website Clone </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+    </head>
+    <body style=" background: #000; color: #fff;">
 
-<body>
-    <div class="header">
-        <nav>
-            <img src="./images/logo.png" alt="logo" class="logo">
-            <div>
-                <button class="lugbtn">English <img src="./images/down-icon.png" alt=""></button>
-                <button>Sign In</button>
+        <!-- For pops -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> -->
+
+        <!-- For Js -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> -->
+        
+        <div class="px-4 py-2 mb-0 d-flex flex-column position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./images/header-image.png); position: relative; background-position: center; background-size: cover;" >
+            <!-- <img src="./images/header-image.png" class=""> -->
+            <nav class="navbar  justify-content-between" style="margin-bottom: 60px; " >
+                <img src="./images/logo.png" alt="logo" class="p-1" height="42" >
+                <div>
+                    <button type="button" class="pt-1 pb-4 m-2 btn btn-outline-light bg-transparent " style="height: 2rem;" >English <img src="./images/down-icon.png" class="" height="10" ></button>
+                    <button type="button" class="py-2 btn pt-1 pb-4 text-light" style="height: 2rem; background-color: #ec0808e3;">Sign In</button>
+                </div>
+            </nav>
+            <div class="justify-content-center" style="margin-top: 10%; margin-bottom: 8.5%;" >
+                <h1 class="text-light fw-bolder text-center justify-content-center" style=" position:relative;">The biggest Indian hits. The best Indian <br>stories. All streaming here.</h1>
+                <h3 class="text-light text-center fw-normal mt-3 position-relative" >Watch anywhere. Cancel anytime.</h3>
+                <p class="text-light text-center mt-3 position-relative" style="font-size: 20px; font-style: bold;">Ready to watch? Enter your email to create to restart your membership</p>
+                <form class="justify-content-center m-2 mt-3 d-flex bg-transparent" style="overflow: hidden; position: relative; height: 60px;">
+                    <input type="email" minlength="5" maxlength="50" placeholder="Email address" required style="width: 45vh; background: transparent; border-color: #ffffff; border-radius: 4px; font-size: 120%; color:#ffffff; padding: 5px; margin-left: 5%;">
+                    <button type="submit" style="margin-left: 1%; margin-right: 5%; width: 30vh;border-color: #ec0808e3; border-radius: 4px; background-color: #ec0808e3; color:#ffffff; font-size: 150%;" >Get Started</button>
+                </form>
             </div>
-        </nav>
-        <div class="headercontent">
-            <h1>Unlimited movies, TV shows and more.</h1>
-            <h3>Watch anywhere. Cancel anytime.</h3>
-            <p>Ready to wathc? Enter your email to create to restart your membership</p>
-            <form class="emailsignup">
-                <input type="email" placeholder="Email address" required>
-                <button type="submit">Get Started</button>
-            </form>
         </div>
-    </div>
-
-    <div class="features">
-        <div class="row">
-            <div class="text-col">
-                <h2>Enjoy on your TV</h2>
-                <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+        <hr style="color: rgb(107, 94, 94); background-color: rgb(99, 90, 90); height: 15px; width: 100%; margin: 0px;">
+        <div class="features" style=" padding: 50px 12px;">
+            <div class="row d-flex flex-column position-relative" style="padding: 50px 130px; width: 100%; flex-wrap: wrap;">
+                <div class="text-col" style="flex-basis: 50%; margin-bottom: 20px;">
+                    <h2 style="font-size: 50px; font-weight: 700; margin-bottom: 20px;">Enjoy on your TV</h2>
+                    <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                </div>
+                <div class="img-col" style="flex-basis: 50%;  margin-bottom: 20px;">
+                    <img src="./images/feature-1.png" alt="Feature 1" style="display: block; width: 90%; margin: auto;">
+                </div>
             </div>
-            <div class="img-col">
-                <img src="./images/feature-1.png" alt="Feature 1">
-            </div>
-
         </div>
-    </div>
-</body>
+    </body>
 </html>
