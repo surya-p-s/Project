@@ -21,8 +21,8 @@ def get_answer_for_question(question: str, knowledge_base:dict) -> str | None:
       
         
 def chat_bot():
-    kb:dict=load_kb("E:\\bot\kb.json")
-    print("Hi my name is IBot how I can help you today :)\n")
+    kb:dict=load_kb(".//bot/kb.json")
+    print("Hi my name is E-Lawyer how I can help you today :)\n")
     while True:
         user_input: str=input('You:')
 
