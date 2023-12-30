@@ -6,59 +6,87 @@ import os
 import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
-import json
 import re
 
-# Imports to read from given source
+# Libaries Imports to read from given source
+import PyPDF2
+import docx
+import requests
+from bs4 import BeautifulSoup
 
-# loading intents file for intent recognition
-
-json_file_path='.//bot/kb.json'
-
-if os.path.exists(json_file_path):
-    with open(json_file_path) as intent_file:
-        intents = json.load(intent_file)
-        # print(intents)
-else:
-    messagebox.showerror("Error","Unable to locate JSON file.")
+# Initialize NLP components
+nltk.download('punkt')
+nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
+# Function to preprocess text
 def preprocess(text):
     words = nltk.word_tokenize(text)
     words = [lemmatizer.lemmatize(word) for word in words]
     return ' '.join(words)
+
+# Function to read PDF document
+def read_pdf(file_path):
+    with open(file_path, 'rb') as file:
+        reader = PyPDF2.PdfFileReader(file)
+        text = ''
+        for page_num in range(reader.numPages):
+            text += reader.getPage(page_num).extractText()
+        return text
+
+# Function to read docx document
+def read_docx(file_path):
+    doc = docx.Document(file_path)
+    text = ''
+    for paragraph in doc.paragraphs:
+        text += paragraph.text + '\n'
+    return text
+
+def read_text(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
+
+# Function to fetch and parse web content
+def fetch_web_content(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # will raise an HTTPError if the HTTP request returned an unsuccessful status code
+        soup = BeautifulSoup(response.text, 'html.parser')
+        return soup.get_text()
+    except requests.HTTPError as e:
+        return "Error: " + str(e)
+    
+
+# Global variable to store all data
+all_data = []
+
+# Function to load data from files and web
+def load_data(sources):
+    global all_data
+    for source in sources:
+        if isinstance(source, str):  # If the source is a file path
+            if source.endswith('.pdf'):
+                all_data.append(read_pdf(source))
+            elif source.endswith('.docx'):
+                all_data.append(read_docx(source))
+            elif source.endswith('.txt'):
+                all_data.append(read_text(source))
+            else:
+                print(f"Unsupported file format: {source}")
+        elif isinstance(source, dict) and 'url' in source:  # If the source is a web URL
+            all_data.append(fetch_web_content(source['url']))
+
 
 def chat_bot(message):
     tokenized = preprocess(message)
     result = 0
     confidence = 0
 
-    for intent in intents['intents']:
-        for pattern in intent['patterns']:
-            tokenized_pattern = preprocess(pattern)
-            if tokenized_pattern == tokenized:
-                result = intent['tag']
-                confidence = 1.0
-                break
-            elif re.search(r'\b' + tokenized_pattern + r'\b', tokenized):
-                result = intent['tag']
-                confidence += 0.2
-            elif tokenized_pattern in tokenized:
-                result = intent['tag']
-                confidence += 0.1
+    for data in all_data:
+        if tokenized in preprocess(data):
+            return "Here is something I found: " + data[:200]  # Example response
 
-    response = ""
-    if confidence >= 0.2:
-        if result == "greeting":
-            response = "Hello there!"
-        elif result == "farewell":
-            response = "Goodbye!"
-        else:
-            response = intents['intents'][result]['responses'][0]
-    else:
-        response = "Sorry, I did not understand you"
-
-    return response
+    return "Sorry, I did not understand you or find relevant information."
 
 # main chat interface
 def send():
@@ -119,5 +147,11 @@ root.grid_columnconfigure(0, weight=1)
 # Make Enter key trigger the send function
 entryField.bind("<Return>", lambda event=None: send())
 
-
+# Load the data
+sources = [
+    # 'path_to_file1.pdf', 
+    # 'path_to_file2.docx',
+    {'url': 'https://legislative.gov.in/'}
+]
+load_data(sources)
 root.mainloop()
