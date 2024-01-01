@@ -1,9 +1,49 @@
 {
   "intents": [
-    {
-      "tag": "greeting",
-      "patterns": ["Hi", "Hello","hi"],
-      "responses": ["Hello there!"]
-    }
+      {
+          "tag": "greeting",
+          "patterns": ["Hi", "Hello", "Is anyone there?", "Good day", "Hey","hi"],
+          "responses": ["Hello! How can I help you with information on India's fundamental rights?"]
+      },
+      {
+          "tag": "farewell",
+          "patterns": ["Bye", "See you later", "Goodbye"],
+          "responses": ["Goodbye! Feel free to ask if you have more questions."]
+      },
+      {
+          "tag": "right_to_equality",
+          "patterns": ["What is the right to equality?", "Tell me about right to equality", "Equality rights", "right to equality"],
+          "responses": ["The Right to Equality ensures equality before the law and prohibits discrimination on grounds of religion, race, caste, sex, or place of birth. It also includes equality of opportunity in matters of employment, abolition of untouchability, and abolition of titles."]
+      },
+      {
+          "tag": "right_to_freedom",
+          "patterns": ["What does right to freedom mean?", "Explain right to freedom", "Freedom rights","right to freedom"],
+          "responses": ["The Right to Freedom includes freedom of speech and expression, assembly, association or union, movement, residence, and the right to practice any profession or occupation. Some of these rights are subject to reasonable restrictions."]
+      },
+      {
+          "tag": "right_against_exploitation",
+          "patterns": ["What is right against exploitation?", "Explain right against exploitation", "Exploitation rights","right against exploitation"],
+          "responses": ["The Right Against Exploitation prohibits all forms of forced labor, child labor, and human trafficking. It aims to protect the dignity of the individual and the right to a decent standard of living."]
+      },
+      {
+          "tag": "right_to_freedom_of_religion",
+          "patterns": ["Tell me about the right to freedom of religion", "What is freedom of religion?", "Religious rights", "right to freedom of religion"],
+          "responses": ["The Right to Freedom of Religion includes freedom of conscience and free profession, practice, and propagation of religion. It also includes freedom to manage religious affairs and freedom from certain taxes for promoting any particular religion."]
+      },
+      {
+          "tag": "cultural_and_educational_rights",
+          "patterns": ["What are cultural and educational rights?", "Explain cultural rights", "Educational rights","cultural and educational right","right to education"],
+          "responses": ["Cultural and Educational Rights preserve the right of all minorities to establish and administer educational institutions of their choice. These rights aim to protect the rich heritage of minority communities under the constitution."]
+      },
+      {
+          "tag": "right_to_constitutional_remedies",
+          "patterns": ["Explain right to constitutional remedies", "What is right to constitutional remedies?", "Constitutional remedies","right to constitutional remedies"],
+          "responses": ["The Right to Constitutional Remedies empowers citizens to move a court of law in case of any denial of the fundamental rights. This right is considered the heart and soul of the Constitution, providing various remedies for enforcement of fundamental rights."]
+      },
+      {
+          "tag": "unknown",
+          "patterns": [],
+          "responses": ["Sorry, I didn't understand that. Can you rephrase your question about the fundamental rights of Indians?"]
+      }
   ]
 }

@@ -150,8 +150,8 @@ entryField.bind("<Return>", lambda event=None: send())
 # Load the data
 sources = [
     # 'path_to_file1.pdf', 
-    # 'path_to_file2.docx',
-    {'url': 'https://legislative.gov.in/'}
+    # 'chatgpt/docs/fundametrights.docx',
+    {'url': 'https://knowindia.india.gov.in/profile/fundamental-rights.php#:~:text=These%20are%3A,opportunity%20in%20matters%20of%20employment'}
 ]
 load_data(sources)
 root.mainloop()

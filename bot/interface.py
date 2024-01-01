@@ -30,7 +30,7 @@ def preprocess(text):
 
 def chat_bot(message):
     tokenized = preprocess(message)
-    result = 0
+    result = None
     confidence = 0
 
     for intent in intents['intents']:
@@ -48,17 +48,16 @@ def chat_bot(message):
                 confidence += 0.1
 
     response = ""
-    if confidence >= 0.2:
-        if result == "greeting":
-            response = "Hello there!"
-        elif result == "farewell":
-            response = "Goodbye!"
-        else:
-            response = intents['intents'][result]['responses'][0]
+    if confidence >= 0.2 and result is not None:
+        for intent in intents['intents']:
+            if intent['tag'] == result:
+                response = intent['responses'][0]
+                break
     else:
         response = "Sorry, I did not understand you"
 
     return response
+
 
 # main chat interface
 def send():
