@@ -58,17 +58,16 @@ def chat_bot(message):
 
     return response
 
-
 # main chat interface
 def send():
     message = entryField.get("1.0",'end-1c')
     entryField.delete("1.0",'end')
     ChatLog.config(state='normal')
-    ChatLog.insert('end', "User: " + message + '\n')
+    ChatLog.insert('end', "User: " + message + '\n\n')
     ChatLog.config(foreground='gray')
 
     response = chat_bot(message)
-    ChatLog.insert('end', "ChatBot: " + response + '\n')
+    ChatLog.insert('end', "ChatBot: " + response + '\n\n')
 
     ChatLog.config(state='disabled')
     ChatLog.yview('moveto', '1.0')
@@ -117,6 +116,5 @@ root.grid_columnconfigure(0, weight=1)
 
 # Make Enter key trigger the send function
 entryField.bind("<Return>", lambda event=None: send())
-
 
 root.mainloop()
