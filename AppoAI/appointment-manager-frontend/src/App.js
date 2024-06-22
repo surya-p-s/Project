@@ -4,6 +4,7 @@ import './App.css';
 import LoginPage from './LoginPage';
 import PatientDashboard from './PatientDashboard';
 import DoctorDashboard from './DoctorDashboard';
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
           <Router>
             <Routes>
                 <Route path="/" element={<LoginPage />} />
-                <Route path="/patient-dashboard" element={<PatientDashboard />} />
-                <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+                <Route path="/patient-dashboard" element={<ProtectedRoute component={PatientDashboard} role="patient" />} />
+                <Route path="/doctor-dashboard" element={<ProtectedRoute component={DoctorDashboard} role="doctor" />} />
             </Routes>
         </Router>
         </div>       
