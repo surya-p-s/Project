@@ -111,9 +111,9 @@ root.title("E-Lawyer")
 # background_label.place(relwidth=1, relheight=1)
 
 ChatLog = Text(root, bd=0, bg="white", height="8", width="50", font="Arial", relief=GROOVE, borderwidth=5, wrap=WORD)
-ChatLog.config(state='disabled')
+ChatLog.config(state='disabled')    
 
-label = Label(root, text="ChatBot", font=('Arial', 16, 'bold'), bg='#32a8a6', fg='white', padx=20, pady=10)  # Add label for a cleaner layout
+lfabel = Label(root, text="ChatBot", font=('Arial', 16, 'bold'), bg='#32a8a6', fg='white', padx=20, pady=10)  # Add label for a cleaner layout
 
 # Create a themed style to apply a shadow effect
 style = ttk.Style()
@@ -137,7 +137,7 @@ entryField.grid(row=2, column=0, pady="10", padx="20", sticky='nsew')
 # add_shadow(ChatLog)
 
 # Grid layout
-label.grid(row=0, column=0, columnspan=2, pady="10")
+Label.grid(row= 0, column=0, columnspan=2, pady="10")
 ChatLog.grid(row=1, column=0, columnspan=2, pady="20", padx="20", sticky='nsew')
 
 # Adjust row and column weights for resizing
